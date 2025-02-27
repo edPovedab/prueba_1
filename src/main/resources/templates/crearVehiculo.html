@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Crear Vehículo</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body>
+        <h1>Crear Nuevo Vehículo</h1>
+        <form action="#" th:action="@{/vehiculos/crear}" method="post" th:object="${vehiculo}">
+            <label for="descripcion">Descripción:</label>
+            <input type="text" id="descripcion" th:field="*{descripcion}" required>
+
+            <label for="fechaSalida">Fecha de Salida:</label>
+            <input type="date" id="fechaSalida" th:field="*{fechaSalida}" required>
+
+            <label for="cilindros">Cilindros:</label>
+            <input type="number" id="cilindros" th:field="*{cilindros}" required>
+
+            <button type="submit">Crear Vehículo</button>
+        </form>
+        <button onclick="window.location.href = '/vehiculos/listado'">Volver al Listado</button>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Vehículos</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <h1>Listado de Vehículos</h1>
+    <a th:href="@{/vehiculos/crearForm}">Crear Nuevo Vehículo</a> 
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripción</th>
+                <th>Fecha de Salida</th>
+                <th>Cilindros</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="vehiculo : ${vehiculos}">
+                <td th:text="${vehiculo.idVehiculo}"></td>
+                <td th:text="${vehiculo.descripcion}"></td>
+                <td th:text="${vehiculo.fechaSalida}"></td>
+                <td th:text="${vehiculo.cilindros}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
